@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nmb3rs - numbers in words</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="utf-8">
+        <meta name=”description” content=”Nmb3rs converts numbers in words. Three languages are supported right now - English, German, Russian.”>         
+		<script src="js/nmb3rs.js" type="text/javascript">
+        </script>
+        <style type="text/css">
+            textarea { 
+                background-color:#fafafa; 
+                width:100%;
+                border:6px solid #bbb; 
+                font-size:18px; 
+                font-family:Verdana,sans-serif;
+                margin-bottom: 5px; 
+                color:#999;
+                position: relative;
+                outline-width: 0;
+            }
+            input {
+                background-color:#fafafa;
+                color:#999;
+                border: 0px;
+                font-size:32px;
+                font-family:Verdana,sans-serif;
+                outline-width: 0;
+            }
+
+            #wrap {
+              width: 100%
+              margin:5px;
+            }
+
+            #header {
+              width: 50%;
+              margin: 0 auto;
+              clear: both;
+              font: 20px Times;
+              color: #555;
+            }
+
+            #languages {
+              width: 50%;
+              margin: 0 auto;
+              clear: both;
+            }
+
+            .language  {
+                margin: 10px 10px 10px 0;
+                font: bold 20px Times;
+                color: #555;
+                float: left;
+                padding: 5px;
+                background-color: #bbb;
+                border:6px solid #bbb; 
+                cursor: pointer;
+            }
+
+            .selectedLanguage { 
+                margin: 10px 10px 10px 0;
+                font: bold 20px Times;
+                float: left;
+                padding: 5px;
+                cursor: pointer;
+                background-color:#fafafa; 
+                border:6px solid #bbb; 
+                color:#999;}
+
+
+            h1  {
+                font: bold 40px Times;
+                margin: 0;
+                padding: 0;
+                color: #555;
+            }
+
+            .content {
+              width: 50%;
+              margin: 0 auto;
+            }
+
+            #share-buttons {
+                float: left;
+            }
+
+            #playstore-button {
+                float: right;
+            }
+
+            #share-buttons img {
+                width: 35px;
+                padding: 5px;
+                border: 0;
+                box-shadow: 0;
+                display: inline;
+            }
+
+            #number {
+                width:90%;
+                float: left;
+            }
+
+            .icon {
+                width:8%;
+                float:right;
+                cursor: pointer;
+            }
+
+            .inputfield {
+                clear: both;
+                background-color:#fafafa; 
+                width:100%;
+                height: 50px;
+                border:6px solid #bbb; 
+                margin-bottom: 5px; 
+                color:#999;
+            }            
+        </style>        
+    </head>
+    <body>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- nmb3rs3 -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:728px;height:90px"
+             data-ad-client="ca-pub-6649152940562471"
+             data-ad-slot="8460792974"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>        
+        <div id="wrap">
+            <div id="header"><h1>nmb3rs - numbers in words</h1>Nmb3rs let you know how to write numbers in words.<br/>Just select the language and type the number in the field below.</div>
+            <div id="languages">
+                <div id="EN" class="selectedLanguage" onClick="changeNumbersLanguage('EN')">EN</div>
+                <div id="DE" class="language" onClick="changeNumbersLanguage('DE')">DE</div>
+                <div id="ES" class="language" onClick="changeNumbersLanguage('ES')">ES</div>
+                <div id="FR" class="language" onClick="changeNumbersLanguage('FR')">FR</div>
+                <div id="RU" class="language" onClick="changeNumbersLanguage('RU')">RU</div>
+            </div>
+
+            <div id="content" class="content">
+                <form id="numberToWordForm">
+                    <div class="inputfield">
+                        <input type="text" id="number" onKeyUp="callNumberToWord()" placeholder="Enter the number" onkeydown="if (event.keyCode == 13) return false;">
+                        <img src="images/listen.png" class="icon" onClick="listenNumber()"/>
+                        <audio id="audioPlayer" src="" autoplay="autoplay"></audio>
+                    </div>
+                    <textarea cols="40" rows="10" id="numberword" readonly></textarea>
+                </form>
+            </div>
+            <div class="content">
+                <!-- I got these buttons from simplesharebuttons.com -->
+                <div id="share-buttons">
+                 
+                    <!-- Facebook -->
+                    <a href="http://www.facebook.com/sharer.php?u=http://nmb3rs.com" target="_blank"><img src="images/facebook.png" alt="Facebook" /></a>
+                     
+                    <!-- Twitter -->
+                    <a href="http://twitter.com/share?url=http://nmb3rs.com&text=nmb3rs - numbers in words" target="_blank"><img src="images/twitter.png" alt="Twitter" /></a>
+                     
+                    <!-- Google+ -->
+                    <a href="https://plus.google.com/share?url=http://nmb3rs.com" target="_blank"><img src="images/google.png" alt="Google" /></a>
+                     
+                    <!-- Digg -->
+                    <a href="http://www.digg.com/submit?url=http://nmb3rs.com" target="_blank"><img src="images/diggit.png" alt="Digg" /></a>
+                     
+                    <!-- Reddit -->
+                    <a href="http://reddit.com/submit?url=http://nmb3rs.com&title=nmb3rs - numbers in words" target="_blank"><img src="images/reddit.png" alt="Reddit" /></a>
+                     
+                    <!-- LinkedIn -->
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://nmb3rs.com" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" /></a>
+                     
+                    <!-- Pinterest -->
+                    <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());"><img src="images/pinterest.png" alt="Pinterest" /></a>
+                     
+                    <!-- StumbleUpon-->
+                    <a href="http://www.stumbleupon.com/submit?url=http://nmb3rs.com&title=nmb3rs - numbers in words" target="_blank"><img src="images/stumbleupon.png" alt="StumbleUpon" /></a>
+                     
+                    <!-- Email -->
+                    <a href="mailto:?Subject=Simple Share Buttons&Body=I%20saw%20this%20and%20thought%20of%20you!%20 http://nmb3rs.com"><img src="images/email.png" alt="Email" /></a>
+                </div>
+                <div id="playstore-button"><a href="https://play.google.com/store/apps/details?id=com.funnygerman.nmbrs"><img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" target="googleplay"/></a></div>           
+            </div>
+        </div>   
+    </body>
+</html>
