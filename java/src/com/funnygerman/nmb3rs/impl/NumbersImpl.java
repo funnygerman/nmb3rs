@@ -62,7 +62,7 @@ public class NumbersImpl implements Numbers {
     }
 
     public String getNumberAsWord(final String pNumber, final LANGUAGE pLang) {
-        return null;
+        return RussianNumbersImpl.getNumberAsWord(pNumber);
     }
 
     public String getNumberAsWord(final String pNumber, final Locale pLang) {
